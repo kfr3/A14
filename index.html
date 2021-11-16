@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+    <link rel="stylesheet" type="text/css" href="cookie.css">
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            let user = getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 365);
+                }
+            }
+        }
+    </script>
+
+</head>
+<body onload="checkCookie()">
+<h1>Cookies!</h1>
+<p>Did you know there are many cookie flavors out there in the world beside chocolate chip?
+Here's some unique ones that you should try!</p>
+
+<ul>
+    <li>Snickerdoodle</li>
+    <img src="images/snickerdoodle.jpeg" alt="a pile of snickerdoodle cookies" />
+    <li>White Chocolate Macadamia Nut</li>
+    <img src="images/macadamia.jpeg" alt="a pile of white chocolate macadamia nut cookies" />
+    <li>Pinwheel</li>
+    <img src="images/pinwheel.jpeg" alt="a pile of chocolate and vanilla pinwheel cookies" />
+    <li>Scones</li>
+    <img src="images/scones.jpeg" alt="a tray of raspberry and lemon scones" />
+    <li>Snowball</li>
+    <img src="images/snowball.jpeg" alt="a pile of snowball cookies" />
+</ul>
+
+<p>And so many more! Check out a list of even more cookies <a href="https://en.wikipedia.org/wiki/List_of_cookies" target="_blank">here!</a></p>
+
+<footer>&copy Kelly Rita, November 16<sup>th</sup>, 2021</footer>
+
+</body>
+</html>
