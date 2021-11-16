@@ -27,3 +27,8 @@ img{
     margin-bottom: 20px;
     border: 2px solid #2D2618;
 }
+
+footer{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
