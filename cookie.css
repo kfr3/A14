@@ -1,0 +1,29 @@
+body{
+    background-color: #AE832E;
+}
+
+h1{
+    font-family: Arial, sans-serif;
+    color: #2D2618;
+}
+
+p{
+    font-family: Arial, sans-serif;
+    color: #2D2618;
+    font-size: 150%
+}
+
+li{
+    list-style-type: circle;
+    font-family: Arial, sans-serif;
+    font-size: 125%;
+    color: #2D2618;
+}
+
+img{
+    width: 15%;
+    height: 15%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #2D2618;
+}
